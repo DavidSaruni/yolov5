@@ -12,7 +12,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # Load the model
-model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
+model = torch.hub.load('DavidSaruni/yolov5', 'yolov5s', pretrained=True)
 model.eval()
 
 # Define the API endpoint
@@ -41,6 +41,6 @@ if __name__ == "__main__":
     parser.add_argument('--model', default='yolov5s', help='model to run, i.e. --model yolov5s')
     args = parser.parse_args()
 
-    model = torch.hub.load('ultralytics/yolov5', args.model)
+    model = torch.hub.load('DavidSaruni/yolov5', args.model)
     app.run(host="0.0.0.0", port=args.port)  # debug=True causes Restarting with stat
 
