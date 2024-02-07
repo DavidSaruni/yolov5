@@ -59,7 +59,7 @@ def predict():
 
 def perform_inference(image):
     # Resize and normalize the image
-    image_resized = cv2.resize(image, (640, 640))
+    image_resized = cv2.resize(image, (320, 320))
     image_resized = image_resized / 255.0
     image_resized = torch.from_numpy(image_resized).permute(2, 0, 1).unsqueeze(0).float()
 
